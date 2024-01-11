@@ -14,21 +14,21 @@ let counter = 0;
 let isPaused = false;
 
 //updating the counter value
-function updateCounter() {
+function getCounter() {
   counterElm.textContent = counter;
 }
 //Event listener for the minus button
 minusButton.addEventListener("click", function () {
   if (!isPaused) {
     counter--;
-    updateCounter();
+    getCounter();
   }
 });
 //Event listener for plus button
 plusButton.addEventListener("click", function () {
   if (!isPaused) {
     counter++;
-    updateCounter();
+    getCounter();
   }
 });
 
@@ -56,7 +56,7 @@ heartButton.addEventListener("click", function () {
 
     newLike.textContent = `${counter} liked ${likesForCurrentSecond} times `;
 
-    updateCounter();
+    getCounter();
 
     likesComments.appendChild(newLike);
   }
@@ -80,8 +80,8 @@ submitButton.addEventListener("click", function (event) {
 setInterval(() => {
   if (!isPaused) {
     counter++;
-    updateCounter();
+    getCounter();
   }
 }, 1000);
 
-updateCounter();
+getCounter();
